@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - storybook
+      - dev
 
 jobs:
   deploy:
@@ -40,17 +41,34 @@ jobs:
           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
 
       # Build and deploy for main branch
-      - name: Build Next.js application
+      - name: Build Next.js application for main
         if: github.ref == 'refs/heads/main'
         run: npm run build
 
-      - name: Deploy Next.js via SFTP
+      - name: Deploy Next.js via SFTP for main
         if: github.ref == 'refs/heads/main'
         run: |
           sudo apt-get install -y sshpass
           sshpass -p "$SSH_PASSWORD" sftp -o StrictHostKeyChecking=no angelrob@docs.rezurrector.com <<EOF
             mkdir -p /home2/angelrob/www/rezurrector
             put -r ./out/* /home2/angelrob/www/rezurrector
+            quit
+          EOF
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+
+      # Build and deploy for dev branch
+      - name: Build Next.js application for dev
+        if: github.ref == 'refs/heads/dev'
+        run: npm run build
+
+      - name: Deploy Next.js via SFTP for dev
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          sudo apt-get install -y sshpass
+          sshpass -p "$SSH_PASSWORD" sftp -o StrictHostKeyChecking=no angelrob@docs.rezurrector.com <<EOF
+            mkdir -p /home2/angelrob/dev.rezurrector.com
+            put -r ./out/* /home2/angelrob/dev.rezurrector.com
             quit
           EOF
         env:
