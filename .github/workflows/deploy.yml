@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - storybook
 
 jobs:
   deploy:
@@ -21,17 +22,35 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build application
+      # Build and deploy for storybook branch
+      - name: Build Storybook application
+        if: github.ref == 'refs/heads/storybook'
         run: npm run build-storybook
 
-      - name: Install sshpass
-        run: sudo apt-get install sshpass
-
-      - name: Deploy via SFTP
+      - name: Deploy Storybook via SFTP
+        if: github.ref == 'refs/heads/storybook'
         run: |
+          sudo apt-get install -y sshpass
           sshpass -p "$SSH_PASSWORD" sftp -o StrictHostKeyChecking=no angelrob@docs.rezurrector.com <<EOF
             mkdir -p /home2/angelrob/ui.rezurrector.com
             put -r ./storybook-static/* /home2/angelrob/ui.rezurrector.com
+            quit
+          EOF
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+
+      # Build and deploy for main branch
+      - name: Build Next.js application
+        if: github.ref == 'refs/heads/main'
+        run: npm run build
+
+      - name: Deploy Next.js via SFTP
+        if: github.ref == 'refs/heads/main'
+        run: |
+          sudo apt-get install -y sshpass
+          sshpass -p "$SSH_PASSWORD" sftp -o StrictHostKeyChecking=no angelrob@docs.rezurrector.com <<EOF
+            mkdir -p /home2/angelrob/www/rezurrector
+            put -r ./out/* /home2/angelrob/www/rezurrector
             quit
           EOF
         env:
