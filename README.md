@@ -5,7 +5,7 @@
 **Principal Frontend / Fullstack Architect · UX · DX · AX · AI Evaluation**
 
 18+ years shipping production systems across government, healthcare, entertainment, and enterprise.
-Currently designing benchmark tasks and eval infrastructure for frontier LLMs (Terminal Bench / Anthropic).
+Currently designing benchmark tasks and eval infrastructure for frontier LLMs (Terminal Bench / Anthropic, via marquez.ANGEL).
 
 [Portfolio](https://ange.dev) · [LinkedIn](https://www.linkedin.com/in/angel-marquez-660641226/) · [Docs / Resources](http://docs.angelrobertmarquez.com/)
 
@@ -29,12 +29,16 @@ UI systems, and AI-assisted workflows end to end.
 
 | Project | What it demonstrates |
 |---|---|
-| **[GRC](https://grc.angelrobertmarquez.com/)** | Governance/risk/compliance workflow app — audit trails, control mapping, evidence tracking |
 | **[Classification](https://seal.ange.dev/)** | Document/data classification and access-control modeling |
 | **[Inventory](https://inventrack.angelrobertmarquez.com/)** | Asset inventory tracking with CRUD, search, and status workflows |
 | **[Posture](https://cyber-lens-glow.lovable.app/)** | Security posture dashboard — visualizing risk signals and status over time |
+| **[GRC](https://grc.angelrobertmarquez.com/)** | Governance/risk/compliance workflow app — audit trails, control mapping, evidence tracking |
 | **[Sensors / Digital Twin](https://sensor.rezurrector.com/)** | Real-time sensor telemetry rendered as a digital twin interface |
+| **[Waveplate](https://waveplate-vision.lovable.app/)** | Legacy system modernization concept — bridging SQL Server/.NET stacks with a modern React front end |
 | **[AI Eval — Benchforge](https://benchforge.ange.dev/)** | Benchmark authoring and scoring tooling for evaluating LLM agent performance |
+| **[Bitcoin Value OS](https://bitcoin-lens-os.lovable.app/)** | Terminal-style research dashboard — multi-source data aggregation and valuation modeling |
+| **[Bill](https://radix-bloom.lovable.app/)** | Billing/invoicing workflow — line-item logic, calculations, and structured document output |
+| **[Supplements](https://rx.ange.dev/)** | Personal health tracking app — scheduling, inventory, and history logging |
 | **[Game](https://go.rezurrector.com/)** | Small interactive build — UI/animation and state management outside a business-app context |
 
 ---
