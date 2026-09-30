@@ -32,6 +32,7 @@ UI systems, and AI-assisted workflows end to end.
 | Project | What it demonstrates |
 |---|---|
 | **[Sentinel](https://sentinel.ange.dev/)** | 3D facility modeling with deterministic red-team path analysis — automated security grading and mitigation prioritization |
+| **[Mission Analytics](https://dark-mode-joy.lovable.app/)** | Analyst command-center console — mission/report/event data with row-level authorization and a typed API boundary designed for a future FastAPI swap-in |
 | **[Posture](https://cyber-lens-glow.lovable.app/)** | Security posture dashboard — visualizing risk signals and status over time |
 | **[Classification](https://seal.ange.dev/)** | Document/data classification and access-control modeling |
 | **[GRC](https://grc.angelrobertmarquez.com/)** | Governance/risk/compliance workflow app — audit trails, control mapping, evidence tracking |
